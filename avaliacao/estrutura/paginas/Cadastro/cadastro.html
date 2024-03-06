@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+</head>
+<body>
+
+  <div class="container">
+    <div id="page1" class="page active">
+      <h2>Login</h2>
+      <p>Informe seu login</p>
+      <button onclick="showPage('page2')">Ir para a Página 2</button>
+    </div>
+
+    <div id="page2" class="page">
+      <h2>Cadastrar</h2>
+      <p>crie seu cadastro</p>
+      <button onclick="showPage('page1')">Voltar para a Página 1</button>
+    </div>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      // Esconder todas as páginas
+      var pages = document.querySelectorAll('.page');
+      for (var i = 0; i < pages.length; i++) {
+        pages[i].classList.remove('active');
+      }
+
+      // Exibir a página desejada
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
